@@ -45,8 +45,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: n
-        release_name: n
+        tag_name: ${{ github.event.repository.updated_at}}
+        release_name: ${{ github.event.repository.updated_at}}
         draft: true
         prerelease: false
   

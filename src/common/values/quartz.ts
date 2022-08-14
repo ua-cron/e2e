@@ -5,10 +5,6 @@ import { getSharedHelper } from './../helpers';
 export const testQuartz = (type: string) => {
 	const { findInContainer } = getSharedHelper(type);
 
-	beforeEach(() => {
-		cy.visit('/');
-	});
-
 	const actions = [
 		{
 			value: '0,1,2,3 2/4 6/2 ? 2-7 SUN,MON 2019/1',

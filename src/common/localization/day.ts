@@ -1,4 +1,4 @@
-import { Type, WeekDayUtils, MonthUtils } from '@sbzen/cron-core';
+import { Type, Segment, getList, getDaysOfWeekCodes } from '@sbzen/cron-core';
 import { CronType } from './../../enums/cron-type.enum';
 import { getHelper } from './helpers';
 
@@ -20,7 +20,7 @@ export const dayTabLocalization = (type: string) => {
 				`.c-tab-content[tab-name="${Type.DAY}"] .c-every-weekday .c-every-weekday-option-label`
 			);
 		});
-		
+
 		it('increment weekday segment', () => {
 			checkLocalizationField(
 				buildFieldSelector(Type.DAY, 'dayOfWeekIncrement.label1'),
@@ -32,15 +32,15 @@ export const dayTabLocalization = (type: string) => {
 			);
 
 			if (getCronType() === CronType.QUARTZ) {
-				WeekDayUtils.list().forEach((weekday, i) => {
+				getList(Segment.dayOfWeek).forEach(({ value }, i) => {
 					checkLocalizationField(
-						`[data-cron-action-value="common.dayOfWeek.${weekday.toLowerCase()}"]`,
+						`[data-cron-action-value="common.dayOfWeek.${value.toLowerCase()}"]`,
 						`.c-tab-content[tab-name="${Type.DAY}"] .c-increment-weekday .c-increment-weekday-from option[value="${i + 1}"]`
 					);
 				});
 			}
 		});
-		
+
 		it('increment day of month segment', () => {
 			checkLocalizationField(
 				buildFieldSelector(Type.DAY, 'dayOfMonthIncrement.label1'),
@@ -57,9 +57,9 @@ export const dayTabLocalization = (type: string) => {
 					`.c-tab-content[tab-name="${Type.DAY}"] .c-increment-monthday .c-increment-monthday-option-label3`
 				);
 
-				MonthUtils.everyList().forEach((every, i) => {
+				getList(Segment.month, true).forEach(({ value }, i) => {
 					checkLocalizationField(
-						`[data-cron-action-value="common.dayOfMonth.${every.toLowerCase()}"]`,
+						`[data-cron-action-value="common.dayOfMonth.${value.toLowerCase()}"]`,
 						`.c-tab-content[tab-name="${Type.DAY}"] .c-increment-monthday .c-increment-monthday-from option[value="${i + 1}"]`
 					);
 				});
@@ -72,11 +72,10 @@ export const dayTabLocalization = (type: string) => {
 				`.c-tab-content[tab-name="${Type.DAY}"] .c-and-weekday .c-and-weekday-option-label`
 			);
 
-			WeekDayUtils.list().forEach(weekday => {
-				const code = WeekDayUtils.getCode(weekday);
+			getDaysOfWeekCodes().forEach(({ value, label }) => {
 				checkLocalizationField(
-					`[data-cron-action-value="common.dayOfWeek.${weekday.toLowerCase()}"]`,
-					`.c-tab-content[tab-name="${Type.DAY}"] .c-and-weekday .c-and-weekday-item[item-value="${code}"] .c-and-weekday-item-label`
+					`[data-cron-action-value="common.dayOfWeek.${label.toLowerCase()}"]`,
+					`.c-tab-content[tab-name="${Type.DAY}"] .c-and-weekday .c-and-weekday-item[item-value="${value}"] .c-and-weekday-item-label`
 				);
 			});
 		});
@@ -113,9 +112,9 @@ export const dayTabLocalization = (type: string) => {
 					`.c-tab-content[tab-name="${Type.DAY}"] .c-last-nth .c-last-nth-option-label2`
 				);
 
-				WeekDayUtils.list().forEach((weekday, i) => {
+				getList(Segment.dayOfWeek).forEach(({ value }, i) => {
 					checkLocalizationField(
-						`[data-cron-action-value="common.dayOfWeek.${weekday.toLowerCase()}"]`,
+						`[data-cron-action-value="common.dayOfWeek.${value.toLowerCase()}"]`,
 						`.c-tab-content[tab-name="${Type.DAY}"] .c-last-nth .c-last-nth-weekday option[value="${i + 1}L"]`
 					);
 				});
@@ -138,9 +137,9 @@ export const dayTabLocalization = (type: string) => {
 					`.c-tab-content[tab-name="${Type.DAY}"] .c-nearest .c-nearest-option-label2`
 				);
 
-				MonthUtils.everyList().forEach((weekday, i) => {
+				getList(Segment.month, true).forEach(({ value }, i) => {
 					checkLocalizationField(
-						`[data-cron-action-value="common.dayOfMonth.${weekday.toLowerCase()}"]`,
+						`[data-cron-action-value="common.dayOfMonth.${value.toLowerCase()}"]`,
 						`.c-tab-content[tab-name="${Type.DAY}"] .c-nearest .c-nearest-monthday option[value="${i + 1}W"]`
 					);
 				});
@@ -156,16 +155,16 @@ export const dayTabLocalization = (type: string) => {
 					`.c-tab-content[tab-name="${Type.DAY}"] .c-nth .c-nth-option-label2`
 				);
 
-				MonthUtils.everyList().slice(0, 5).forEach((weekday, i) => {
+				getList(Segment.month, true).slice(0, 5).forEach(({ value }, i) => {
 					checkLocalizationField(
-						`[data-cron-action-value="common.dayOfMonth.${weekday.toLowerCase()}"]`,
+						`[data-cron-action-value="common.dayOfMonth.${value.toLowerCase()}"]`,
 						`.c-tab-content[tab-name="${Type.DAY}"] .c-nth .c-nth-every option[value="${i + 1}"]`
 					);
 				});
 
-				WeekDayUtils.list().forEach((weekday, i) => {
+				getList(Segment.dayOfWeek).forEach(({ value }, i) => {
 					checkLocalizationField(
-						`[data-cron-action-value="common.dayOfWeek.${weekday.toLowerCase()}"]`,
+						`[data-cron-action-value="common.dayOfWeek.${value.toLowerCase()}"]`,
 						`.c-tab-content[tab-name="${Type.DAY}"] .c-nth .c-nth-every-weekday option[value="${i + 1}"]`
 					);
 				});

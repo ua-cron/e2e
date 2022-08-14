@@ -1,4 +1,4 @@
-import { Type, QuartzService, Segment } from '@sbzen/cron-core';
+import { Type, Segment, getList, getMonthCodes } from '@sbzen/cron-core';
 
 import { CronType } from './../../enums/cron-type.enum';
 import { getSharedHelper } from './../helpers';
@@ -56,15 +56,15 @@ export const testSimple = (type: string, cssClassPrefix = '') => {
             itemsBox: and.itemsBox
           });
 
-          let items = QuartzService.getList(Segment.seconds);
+          let items = getList(Segment.seconds);
           if (tab === Type.HOURS) {
-            items = QuartzService.getList(Segment.hours);
+            items = getList(Segment.hours);
           } else if (tab === Type.MONTH) {
-            items = QuartzService.getMonthCodes();
+            items = getMonthCodes();
           } else if (tab === Type.MINUTES) {
-            items = QuartzService.getList(Segment.minutes);
+            items = getList(Segment.minutes);
           } else if (tab === Type.YEAR) {
-            items = QuartzService.getList(Segment.year);
+            items = getList(Segment.year);
           }
 
           items.forEach(({ value }) => {

@@ -10,7 +10,6 @@ export const testLocalization = (type: string) => {
 
 	describe(type, () => {
 		beforeEach(() => {
-			cy.visit('/');
 			findInContainer('[data-cron-action="localization-reset"]').click();
 			findInContainer('[data-cron-action="localization-use"]').click();
 		});

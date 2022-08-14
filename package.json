@@ -1,6 +1,6 @@
 {
   "name": "@sbzen/e2e",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/ua-cron/e2e#readme",
   "peerDependencies": {
-    "@sbzen/cron-core": "^1.0.6"
+    "@sbzen/cron-core": "2.0.0-alpha.1660480017312"
   },
   "devDependencies": {
     "cypress": "^10.4.0",

@@ -1,4 +1,4 @@
-import { Type, QuartzService, Segment } from '@sbzen/cron-core';
+import { Type, getDaysOfWeekCodes, getList, Segment } from '@sbzen/cron-core';
 
 import { CronType } from './../../enums/cron-type.enum';
 import { getSharedHelper } from './../helpers';
@@ -43,7 +43,7 @@ export const testDay = (type: string, cssClassPrefix = '') => {
 				itemsBox: andWeekday.itemsBox
 			});
 
-			QuartzService.getDaysOfWeekCodes()
+			getDaysOfWeekCodes()
 				.forEach(({ value }) => {
 					const postfix = `[item-value="${value}"]`;
 					checkClasses(Type.DAY, {
@@ -66,7 +66,7 @@ export const testDay = (type: string, cssClassPrefix = '') => {
 				itemsBox: andMonthday.itemsBox
 			});
 
-			QuartzService.getList(Segment.month)
+			getList(Segment.month)
 				.forEach(({ value }) => {
 					const postfix = `[item-value="${value}"]`;
 					checkClasses(Type.DAY, {

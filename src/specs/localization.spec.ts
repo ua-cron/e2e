@@ -1,6 +1,6 @@
 import { testLocalization } from './../common/localization/localization';
 
-describe('Localization', () => {
+export const localization = () => describe('Localization', () => {
 	beforeEach(() => cy.visit('/'));
 
 	testLocalization('ReCron');

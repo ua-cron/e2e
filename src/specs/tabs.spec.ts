@@ -1,6 +1,6 @@
 import { testTabs } from './../common/tabs';
 
-describe('Tabs', () => {
+export const tabs = () => describe('Tabs', () => {
 	testTabs('ReCron');
 	testTabs('ReUnixCron');
 	testTabs('ReQuartzCron');

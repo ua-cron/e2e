@@ -1,6 +1,6 @@
 import { testDisabled } from './../common/disabled';
 
-describe('Disabled', () => {
+export const disabled = () => describe('Disabled', () => {
 	testDisabled('ReCron');
 	testDisabled('ReUnixCron');
 	testDisabled('ReQuartzCron');

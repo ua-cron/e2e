@@ -1,4 +1,4 @@
-import { CronType } from '@sbzen/cron-core';
+import { CronType } from './../../enums/cron-type.enum';
 import { getSharedHelper } from './../helpers';
 
 export const getDayClasses = (type: string, cssClassPrefix = '') => {

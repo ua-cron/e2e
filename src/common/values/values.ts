@@ -1,4 +1,4 @@
-import { CronType } from '@sbzen/cron-core';
+import { CronType } from './../../enums/cron-type.enum';
 import { getSharedHelper } from './../helpers';
 
 import { testQuartz } from './quartz';

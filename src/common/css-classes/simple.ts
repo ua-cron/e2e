@@ -1,5 +1,6 @@
-import { Type, CronType, QuartzService, Segment } from '@sbzen/cron-core';
+import { Type, QuartzService, Segment } from '@sbzen/cron-core';
 
+import { CronType } from './../../enums/cron-type.enum';
 import { getSharedHelper } from './../helpers';
 import { cssClassesHelpers } from './helpers';
 import { getSingleClasses } from './simple.classes';

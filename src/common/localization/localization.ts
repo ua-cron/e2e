@@ -1,5 +1,6 @@
-import { Type, CronType } from '@sbzen/cron-core';
+import { Type } from '@sbzen/cron-core';
 
+import { CronType } from './../../enums/cron-type.enum';
 import { getHelper } from './helpers';
 import { dayTabLocalization } from './day';
 import { simpleTabLocalization } from './simple';

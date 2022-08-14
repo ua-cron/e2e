@@ -1,5 +1,5 @@
-import { Type, CronType, WeekDayUtils, MonthUtils } from '@sbzen/cron-core';
-
+import { Type, WeekDayUtils, MonthUtils } from '@sbzen/cron-core';
+import { CronType } from './../../enums/cron-type.enum';
 import { getHelper } from './helpers';
 
 export const dayTabLocalization = (type: string) => {

@@ -1,5 +1,6 @@
-import { Type, CronType, CoreService, MonthUtils } from '@sbzen/cron-core';
+import { Type, CoreService, MonthUtils } from '@sbzen/cron-core';
 
+import { CronType } from './../../enums/cron-type.enum';
 import { getHelper } from './helpers';
 
 export const simpleTabLocalization = (type: string, tab: Type) => {

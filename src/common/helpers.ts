@@ -1,4 +1,4 @@
-import { CronType } from '@sbzen/cron-core';
+import { CronType } from './../enums/cron-type.enum';
 
 export const getSharedHelper = (type: string) => ({
 	getCronType: () => type === 'ReUnixCron' ? CronType.UNIX : CronType.QUARTZ,

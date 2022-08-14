@@ -1,4 +1,6 @@
-import { CronType, Type } from '@sbzen/cron-core';
+import { Type } from '@sbzen/cron-core';
+
+import { CronType } from './../../enums/cron-type.enum';
 import { getSharedHelper } from './../helpers';
 
 export const getSingleClasses = (type: string, tab: Type, cssClassPrefix = '') => {

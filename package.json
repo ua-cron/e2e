@@ -4,14 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && tsc && cp package.json ./dist && zip -r dist.zip dist",
+    "build": "npm run clean && tsc && cp package.json ./dist && tar -czvf dist.tar.gz dist",
     "clean": "rm -rf dist"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ua-cron/e2e.git"
   },
-  "author": "SERHIIBZENKD8F4\\serhiibzenko",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ua-cron/e2e/issues"

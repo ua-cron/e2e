@@ -10,7 +10,7 @@ export const testHideTabs = (type: string) => {
 
     it('tabs should be hidden', () => {
       hideTabs();
-      getTabs().should('not.be.visible');
+      getTabs().should('not.exist');
     });
 
     it('tabs should be visible', () => {

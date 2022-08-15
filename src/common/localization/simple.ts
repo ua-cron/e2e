@@ -1,4 +1,4 @@
-import { Type, Segment, getList, getDaysOfWeekCodes } from '@sbzen/cron-core';
+import { Type, getMonthCodes } from '@sbzen/cron-core';
 
 import { CronType } from './../../enums/cron-type.enum';
 import { getHelper } from './helpers';
@@ -42,9 +42,9 @@ export const simpleTabLocalization = (type: string, tab: Type) => {
 					`.c-tab-content[tab-name="${tab}"] .c-increment .c-increment-option-label2`
 				);
 				if (tab === Type.MONTH) {
-					getList(Segment.month).forEach(({ value }, i) => {
+					getMonthCodes().forEach(({ label }, i) => {
 						checkLocalizationField(
-							`[data-cron-action-value="common.month.${value.toLowerCase()}"]`,
+							`[data-cron-action-value="common.month.${label.toLowerCase()}"]`,
 							`.c-tab-content[tab-name="${tab}"] .c-increment .c-increment-from option[value="${i + 1}"]`
 						);
 					});
@@ -62,7 +62,7 @@ export const simpleTabLocalization = (type: string, tab: Type) => {
 			);
 
 			if (tab === Type.MONTH) {
-				getDaysOfWeekCodes().forEach(({ value, label }) => {
+				getMonthCodes().forEach(({ value, label }) => {
 					checkLocalizationField(
 						`[data-cron-action-value="common.month.${label.toLowerCase()}"]`,
 						`.c-tab-content[tab-name="${tab}"] .c-and .c-and-item[item-value="${value}"] .c-and-item-label`
@@ -85,13 +85,13 @@ export const simpleTabLocalization = (type: string, tab: Type) => {
 			);
 
 			if (tab === Type.MONTH) {
-				getList(Segment.month).forEach(({ value }, i) => {
+				getMonthCodes().forEach(({ label }, i) => {
 					checkLocalizationField(
-						`[data-cron-action-value="common.month.${value.toLowerCase()}"]`,
+						`[data-cron-action-value="common.month.${label.toLowerCase()}"]`,
 						`.c-tab-content[tab-name="${tab}"] .c-range .c-range-from option[value="${i + 1}"]`
 					);
 					checkLocalizationField(
-						`[data-cron-action-value="common.month.${value.toLowerCase()}"]`,
+						`[data-cron-action-value="common.month.${label.toLowerCase()}"]`,
 						`.c-tab-content[tab-name="${tab}"] .c-range .c-range-to option[value="${i + 1}"]`
 					);
 				});

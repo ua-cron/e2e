@@ -54,9 +54,9 @@ export const getSingleClasses = (type: string, tab: Type, cssClassPrefix = '') =
 
 			const itemWrapper = (postfix: string) => {
 				if (tab === Type.MONTH) {
-					return `${itemsBox} .${cssClassPrefix}col-2.c-and-item${postfix}`;
+					return `${itemsBox} .${cssClassPrefix}col-3.${cssClassPrefix}col-md-2.c-and-item${postfix}`;
 				}
-				return `${itemsBox} .${cssClassPrefix}col-1.c-and-item${postfix}`;
+				return `${itemsBox} .${cssClassPrefix}col-2.${cssClassPrefix}col-md-1.c-and-item${postfix}`;
 			};
 			const itemBox = (postfix: string) => `${itemWrapper(postfix)} .${cssClassPrefix}form-check.c-and-item-check`;
 

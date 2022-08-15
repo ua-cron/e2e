@@ -74,7 +74,7 @@ export const getDayClasses = (type: string, cssClassPrefix = '') => {
 			const label = `${switcherBox} label.${cssClassPrefix}form-check-label.c-and-weekday-option-label`;
 			const itemsBox = `${box} .${cssClassPrefix}row.${cssClassPrefix}pl-3.${cssClassPrefix}pt-1.c-and-weekday-list`;
 
-			const itemWrapper = (postfix: string) => `${itemsBox} .${cssClassPrefix}col-2.c-and-weekday-item${postfix}`;
+			const itemWrapper = (postfix: string) => `${itemsBox} .${cssClassPrefix}col-3.${cssClassPrefix}col-md-2.c-and-weekday-item${postfix}`;
 			const itemBox = (postfix: string) => `${itemWrapper(postfix)} .${cssClassPrefix}form-check.c-and-weekday-item-check`;
 
 			return {
@@ -97,7 +97,7 @@ export const getDayClasses = (type: string, cssClassPrefix = '') => {
 			const label = `${switcherBox} label.${cssClassPrefix}form-check-label.c-and-monthday-option-label`;
 			const itemsBox = `${box} .${cssClassPrefix}row.${cssClassPrefix}pl-3.${cssClassPrefix}pt-1.c-and-monthday-list`;
 
-			const itemWrapper = (postfix: string) => `${itemsBox} .${cssClassPrefix}col-1.c-and-monthday-item${postfix}`;
+			const itemWrapper = (postfix: string) => `${itemsBox} .${cssClassPrefix}col-2.${cssClassPrefix}col-md-1.c-and-monthday-item${postfix}`;
 			const itemBox = (postfix: string) => `${itemWrapper(postfix)} .${cssClassPrefix}form-check.c-and-monthday-item-check`;
 
 			return {

@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/ua-cron/e2e#readme",
   "peerDependencies": {
-    "@sbzen/cron-core": "2.0.0-alpha.1660480017312"
+    "@sbzen/cron-core": "2.0.0-alpha.1660686985235"
   },
   "devDependencies": {
     "cypress": "^10.4.0",

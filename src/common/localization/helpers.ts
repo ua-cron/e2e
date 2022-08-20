@@ -12,7 +12,7 @@ const tab2Localization = new Map([
 ]);
 
 function getCronTypeLocalizationProp(type: string) {
-	return type === 'ReUnixCron' ? 'unix' : 'quartz';
+	return type === 'UnixCron' ? 'unix' : 'quartz';
 }
 
 export const getHelper = (type: string) => {

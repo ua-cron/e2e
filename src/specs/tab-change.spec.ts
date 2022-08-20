@@ -1,7 +1,8 @@
 import { testTabChange } from './../common/tab-change';
 
-export const tabChange = () => describe('Tab change', () => {
-  testTabChange('ReCron');
-  testTabChange('ReUnixCron');
-  testTabChange('ReQuartzCron');
+export const tabChange = (beforeEach: () => void) => describe('Tab change', () => {
+  beforeEach();
+
+  testTabChange('UnixCron');
+  testTabChange('QuartzCron');
 });

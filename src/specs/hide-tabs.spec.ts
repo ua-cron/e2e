@@ -1,7 +1,8 @@
 import { testHideTabs } from './../common/hide-tabs';
 
-export const hideTabs = () => describe('Hide Tabs', () => {
-  testHideTabs('ReCron');
-  testHideTabs('ReUnixCron');
-  testHideTabs('ReQuartzCron');
+export const hideTabs = (beforeEach: () => void) => describe('Hide Tabs', () => {
+  beforeEach();
+
+  testHideTabs('UnixCron');
+  testHideTabs('QuartzCron');
 });

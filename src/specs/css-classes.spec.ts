@@ -1,7 +1,8 @@
 import { testCssClasses } from './../common/css-classes/css-classes';
 
-export const cssClasses = () => describe('CSS Classes', () => {
-  testCssClasses('ReCron');
-  testCssClasses('ReUnixCron');
-  testCssClasses('ReQuartzCron');
+export const cssClasses = (beforeEach: () => void) => describe('CSS Classes', () => {
+  beforeEach();
+
+  testCssClasses('UnixCron');
+  testCssClasses('QuartzCron');
 });

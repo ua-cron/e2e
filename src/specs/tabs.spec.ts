@@ -1,7 +1,8 @@
 import { testTabs } from './../common/tabs';
 
-export const tabs = () => describe('Tabs', () => {
-  testTabs('ReCron');
-  testTabs('ReUnixCron');
-  testTabs('ReQuartzCron');
+export const tabs = (beforeEach: () => void) => describe('Tabs', () => {
+  beforeEach();
+
+  testTabs('UnixCron');
+  testTabs('QuartzCron');
 });

@@ -1,7 +1,8 @@
 import { testDisabled } from './../common/disabled';
 
-export const disabled = () => describe('Disabled', () => {
-  testDisabled('ReCron');
-  testDisabled('ReUnixCron');
-  testDisabled('ReQuartzCron');
+export const disabled = (beforeEach: () => void) => describe('Disabled', () => {
+  beforeEach();
+
+  testDisabled('UnixCron');
+  testDisabled('QuartzCron');
 });

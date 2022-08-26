@@ -5,7 +5,7 @@ import { getSharedHelper } from './../helpers';
 import { cssClassesHelpers } from './helpers';
 import { getSingleClasses } from './simple.classes';
 
-export const testSimple = (type: string, cssClassPrefix = '') => {
+export const testSimple = (type: string, cssClassPrefix = '', bs: 'bs4'|'bs5') => {
   const { getContentByTab, getTabs, checkClasses } = cssClassesHelpers(type, cssClassPrefix);
   const { getCronType } = getSharedHelper(type);
 
@@ -26,7 +26,7 @@ export const testSimple = (type: string, cssClassPrefix = '') => {
   tabs
     .filter(t => t !== Type.DAY)
     .forEach(tab => {
-      const tabClasses = getSingleClasses(type, tab, cssClassPrefix);
+      const tabClasses = getSingleClasses(type, tab, cssClassPrefix, bs);
       describe(`tab ${tab}`, () => {
         beforeEach(() => getTabs().filter(`.${tab}`).click());
 

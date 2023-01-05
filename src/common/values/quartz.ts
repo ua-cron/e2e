@@ -23,6 +23,25 @@ export const testQuartz = (type: string) => {
 			}
 		},
 		{
+			value: '0,1,2,3 2/4 6/2 ? 1,3 SUN,MON 2019/1',
+			checker: () => {
+				findInContainer(`.c-tab.${Type.MONTH}`).click();
+				findInContainer('.c-and-check .c-and-option').should('be.checked');
+				findInContainer('.c-and .c-and-item[item-value="JAN"] .c-and-item-field').should('be.checked');
+				findInContainer('.c-and .c-and-item[item-value="FEB"] .c-and-item-field').should('not.be.checked');
+				findInContainer('.c-and .c-and-item[item-value="MAR"] .c-and-item-field').should('be.checked');
+				findInContainer('.c-and .c-and-item[item-value="APR"] .c-and-item-field').should('not.be.checked');
+				findInContainer('.c-and .c-and-item[item-value="MAY"] .c-and-item-field').should('not.be.checked');
+				findInContainer('.c-and .c-and-item[item-value="JUN"] .c-and-item-field').should('not.be.checked');
+				findInContainer('.c-and .c-and-item[item-value="JUL"] .c-and-item-field').should('not.be.checked');
+				findInContainer('.c-and .c-and-item[item-value="AUG"] .c-and-item-field').should('not.be.checked');
+				findInContainer('.c-and .c-and-item[item-value="SEP"] .c-and-item-field').should('not.be.checked');
+				findInContainer('.c-and .c-and-item[item-value="OCT"] .c-and-item-field').should('not.be.checked');
+				findInContainer('.c-and .c-and-item[item-value="NOV"] .c-and-item-field').should('not.be.checked');
+				findInContainer('.c-and .c-and-item[item-value="DEC"] .c-and-item-field').should('not.be.checked');
+			}
+		},
+		{
 			value: '2,0,4,3,1 0/1 3/2 ? * SUN,MON *',
 			checker: () => {
 				findInContainer(`.c-tab.${Type.DAY}`).click();

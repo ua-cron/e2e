@@ -15,8 +15,7 @@ export const dayUnixTab = () => ({
       label: 'c-increment-weekday-option-label'
     },
     everyField: 'c-increment-weekday-every',
-    label2: 'c-increment-weekday-option-label2',
-    fromField: 'c-increment-weekday-from'
+    label2: 'c-increment-weekday-option-label2'
   },
   incrementMonthDay: {
     root: 'c-increment-monthday c-segment',
@@ -26,9 +25,7 @@ export const dayUnixTab = () => ({
       label: 'c-increment-monthday-option-label'
     },
     everyField: 'c-increment-monthday-every',
-    label2: 'c-increment-monthday-option-label2',
-    fromField: 'c-increment-monthday-from',
-    label3: 'c-increment-monthday-option-label3',
+    label2: 'c-increment-monthday-option-label2'
   },
   andWeekDay: {
     root: 'c-and-weekday c-segment',

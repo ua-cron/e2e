@@ -71,12 +71,7 @@ export const testDayUnixTab = (code: string, contentSelector: string, schema: Re
             .should('exist')
             .should('be.visible')
             .should('have.length', 1)
-            .then(el => shouldExactClassesMatch(el, classes.label2, exact))
-            .get(`select${classes.fromField}`)
-            .should('exist')
-            .should('be.visible')
-            .should('have.length', 1)
-            .then(el => shouldExactClassesMatch(el, classes.fromField, exact));
+            .then(el => shouldExactClassesMatch(el, classes.label2, exact));
         });
     });
 
@@ -113,17 +108,7 @@ export const testDayUnixTab = (code: string, contentSelector: string, schema: Re
             .should('exist')
             .should('be.visible')
             .should('have.length', 1)
-            .then(el => shouldExactClassesMatch(el, classes.label2, exact))
-            .get(`select${classes.fromField}`)
-            .should('exist')
-            .should('be.visible')
-            .should('have.length', 1)
-            .then(el => shouldExactClassesMatch(el, classes.fromField, exact))
-            .get(classes.label3)
-            .should('exist')
-            .should('be.visible')
-            .should('have.length', 1)
-            .then(el => shouldExactClassesMatch(el, classes.label3, exact));
+            .then(el => shouldExactClassesMatch(el, classes.label2, exact));
         });
     });
 

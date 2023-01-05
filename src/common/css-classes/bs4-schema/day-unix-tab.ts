@@ -18,8 +18,7 @@ export const dayUnixTab = (): ReturnType<typeof baseUnixSchema>['content'][Type.
       label: 'form-check-label'
     },
     everyField: 'form-control form-control-sm mx-1',
-    label2: '',
-    fromField: 'form-control form-control-sm mx-1'
+    label2: ''
   },
   incrementMonthDay: {
     root: 'form-group form-inline',
@@ -29,9 +28,7 @@ export const dayUnixTab = (): ReturnType<typeof baseUnixSchema>['content'][Type.
       label: 'form-check-label'
     },
     everyField: 'form-control form-control-sm mx-1',
-    label2: '',
-    fromField: 'form-control form-control-sm mx-1',
-    label3: '',
+    label2: ''
   },
   andWeekDay: {
     root: 'form-group',
